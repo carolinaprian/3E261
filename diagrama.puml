@@ -1,0 +1,26 @@
+@startuml
+class Personaje
+class CantAtaqueRecibido
+class AtaqueTerrestre
+class AtaqueAereo
+class AtaqueEspecial
+class Escudo
+class Agarre
+class Combo
+class AtaqueFuerte
+class Escenario
+class Salto
+class Proyectil
+class Caida
+class Mario
+class Luigi
+class DonkeyKong
+class Samus
+class Galinda
+class Ganador
+class Vida
+class Jugador
+class Bot
+
+
+@enduml
