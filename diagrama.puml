@@ -1,4 +1,4 @@
-@startuml
+@startuml PenguinDinner
 
 class Personaje
 class Cliente
@@ -6,16 +6,16 @@ class Pareja
 class Mesera
 class Jugador
 
-Cliente --|> Personaje
-Mesera --|> Personaje
-Pareja --|> Cliente
-Jugador o-- Mesera
+Cliente "1"--|>"1" Personaje
+Mesera "1"--|>"1" Personaje
+Pareja "1"--|>"2" Cliente
+Jugador "1"o--"1" Mesera
 
 class EstadoAnimoCliente
 class EstatusCliente
 
-Cliente *-- EstadoAnimoCliente
-Cliente *-- EstatusCliente
+Cliente "1"*--"3" EstadoAnimoCliente
+Cliente "1"*--"5" EstatusCliente
 
 class Restaurante
 class Reloj
@@ -28,17 +28,17 @@ class Basura
 class Letrero
 class Alfombra
 
-Restaurante *-- Reloj
-Restaurante *-- Mesa
-Restaurante *-- Tele
-Restaurante *-- Silla
-Restaurante *-- Mostrador
-Restaurante *-- CajaRegistradora
-Restaurante *-- Letrero
-Restaurante *-- Alfombra
-Restaurante *-- Basura
+Restaurante "1"*--"1" Reloj
+Restaurante "1"*--"5" Mesa
+Restaurante "1"*--"0,1" Tele
+Restaurante "1"*--"10" Silla
+Restaurante "1"*--"1" Mostrador
+Restaurante "1"*--"1" CajaRegistradora
+Restaurante "1"*--"1" Letrero
+Restaurante "1"*--"1" Alfombra
+Restaurante "1"*--"1" Basura
 
-Mesa *-- Silla
+Mesa "1"*--"2" Silla
 
 Mesera o-- Patin
 Mesera o-- Mesa
