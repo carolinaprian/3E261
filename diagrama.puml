@@ -6,8 +6,16 @@ class Pareja
 class Mesera
 class Jugador
 
+Cliente --|> Personaje
+Mesera --|> Personaje
+Pareja --|> Cliente
+Jugador o-- Mesera
+
 class EstadoAnimoCliente
 class EstatusCliente
+
+Cliente *-- EstadoAnimoCliente
+Cliente *-- EstatusCliente
 
 class Restaurante
 class Reloj
@@ -20,13 +28,40 @@ class Basura
 class Letrero
 class Alfombra
 
+Restaurante *-- Reloj
+Restaurante *-- Mesa
+Restaurante *-- Tele
+Restaurante *-- Silla
+Restaurante *-- Mostrador
+Restaurante *-- CajaRegistradora
+Restaurante *-- Letrero
+Restaurante *-- Alfombra
+Restaurante *-- Basura
+
+Mesa *-- Silla
+
+Mesera o-- Patin
+Mesera o-- Mesa
+Mesera o-- Mostrador
+Mesera o-- Basura
+
 class Pedido
 class Platillo
 class Pescado
 class Camaron
 class Nieve
 class MalteadaFresa
-class MalteadaVainilla
+class Sopa
+
+Cliente *-- Pedido
+Mesera o-- Pedido
+Pedido *-- Platillo
+
+Pescado --|> Platillo
+Camaron --|> Platillo
+Nieve --|> Platillo
+MalteadaFresa --|> Platillo
+Sopa --|> Platillo
 
 class CajaRegistradora
 class Ahorro
@@ -36,5 +71,13 @@ class VentaDiaria
 class Perdida
 class TotalVendido
 
+CajaRegistradora *-- Ahorro
+CajaRegistradora *-- MetaVenta
+CajaRegistradora *-- VentaDiaria
+CajaRegistradora o-- Propina
+CajaRegistradora *-- TotalVendido
+
+Cliente o-- Propina
+Basura *-- Perdida
 
 @enduml
