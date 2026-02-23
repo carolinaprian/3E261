@@ -1,74 +1,40 @@
 @startuml
 
 class Personaje
-class Vida
-class Escudo
-class PorcentajeDanio
-class Escenario
+class Cliente
+class Pareja
+class Mesera
 class Jugador
-class Bot
-class Ganador
 
-class Ataque
-class AtaqueNormal
-class AtaqueAereo
-class AtaqueEspecial
-class Smash
-class Agarre
-class Combo
-class EfectoAtaque
+class EstadoAnimoCliente
+class EstatusCliente
 
-class Movimiento
-class Salto
-class Caida
+class Restaurante
+class Reloj
+class Mesa
+class Tele
+class Patin
+class Silla 
+class Mostrador
+class Basura
+class Letrero
+class Alfombra
 
-class Mario
-class Luigi
-class DonkeyKong
-class Samus
-class Lucina
-class Link
-class Yoshi
-class Kirby
-class Zelda
-class Pit
-class Rosalina
+class Pedido
+class Platillo
+class Pescado
+class Camaron
+class Nieve
+class MalteadaFresa
+class MalteadaVainilla
 
-Personaje *-- Vida
-Personaje *-- Escudo
-Personaje *-- PorcentajeDanio
+class CajaRegistradora
+class Ahorro
+class Propina
+class MetaVenta
+class VentaDiaria
+class Perdida
+class TotalVendido
 
-Escenario *-- Personaje
-
-Combo *-- Ataque
-
-Jugador o-- Personaje
-Personaje o-- Ataque
-Personaje o-- Agarre
-Personaje o-- Movimiento
-Ataque o-- EfectoAtaque
-Ganador o-- Jugador
-
-Bot --|> Jugador
-
-AtaqueNormal --|> Ataque
-AtaqueAereo --|> Ataque
-AtaqueEspecial --|> Ataque
-Smash --|> Ataque
-
-Salto --|> Movimiento
-Caida --|> Movimiento
-
-Mario --|> Personaje
-Luigi --|> Personaje
-DonkeyKong --|> Personaje
-Samus --|> Personaje
-Lucina --|> Personaje
-Link --|> Personaje
-Yoshi --|> Personaje
-Kirby --|> Personaje
-Zelda --|> Personaje
-Pit --|> Personaje
-Rosalina --|> Personaje
 
 @enduml
