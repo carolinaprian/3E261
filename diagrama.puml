@@ -6,44 +6,47 @@ class Pareja
 class Mesera
 class Jugador
 
-Cliente "1"--|>"1" Personaje
-Mesera "1"--|>"1" Personaje
-Pareja "1"--|>"2" Cliente
-Jugador "1"o--"1" Mesera
+Cliente --|> Personaje
+Mesera --|> Personaje
+Pareja --|> Cliente
+
+Jugador "1" o-- "1" Mesera
+
 
 class EstadoAnimoCliente
 class EstatusCliente
 
-Cliente "1"*--"3" EstadoAnimoCliente
-Cliente "1"*--"5" EstatusCliente
+Cliente "1" *-- "1" EstadoAnimoCliente
+Cliente "1" *-- "1" EstatusCliente
 
 class Restaurante
 class Reloj
 class Mesa
 class Tele
 class Patin
-class Silla 
+class Silla
 class Mostrador
 class Basura
 class Letrero
 class Alfombra
+class CajaRegistradora
 
-Restaurante "1"*--"1" Reloj
-Restaurante "1"*--"5" Mesa
-Restaurante "1"*--"0,1" Tele
-Restaurante "1"*--"10" Silla
-Restaurante "1"*--"1" Mostrador
-Restaurante "1"*--"1" CajaRegistradora
-Restaurante "1"*--"1" Letrero
-Restaurante "1"*--"1" Alfombra
-Restaurante "1"*--"1" Basura
+Restaurante "1" *-- "1" Reloj
+Restaurante "1" *-- "1..*" Mesa
+Restaurante "1" *-- "0..*" Tele
+Restaurante "1" *-- "1..*" Silla
+Restaurante "1" *-- "1" Mostrador
+Restaurante "1" *-- "1" CajaRegistradora
+Restaurante "1" *-- "0..1" Letrero
+Restaurante "1" *-- "0..*" Alfombra
+Restaurante "1" *-- "1" Basura
 
-Mesa "1"*--"2" Silla
+Mesa "1" *-- "2" Silla
 
-Mesera o-- Patin
-Mesera o-- Mesa
-Mesera o-- Mostrador
-Mesera o-- Basura
+Mesera "1" o-- "0..1" Patin
+Cliente "1" o-- "0..1" Mesa
+Mesera "1" o-- "1" Mostrador
+Mesera "1" o-- "1" Basura
 
 class Pedido
 class Platillo
@@ -53,9 +56,9 @@ class Nieve
 class MalteadaFresa
 class Sopa
 
-Cliente *-- Pedido
-Mesera o-- Pedido
-Pedido *-- Platillo
+Cliente "1" *-- "0..*" Pedido
+Mesera "1" o-- "0..*" Pedido
+Pedido "1" *-- "1..*" Platillo
 
 Pescado --|> Platillo
 Camaron --|> Platillo
@@ -63,21 +66,20 @@ Nieve --|> Platillo
 MalteadaFresa --|> Platillo
 Sopa --|> Platillo
 
-class CajaRegistradora
 class Ahorro
 class Propina
-class MetaVenta
+class MetaVentaDiaria
 class VentaDiaria
 class Perdida
 class TotalVendido
 
-CajaRegistradora *-- Ahorro
-CajaRegistradora *-- MetaVenta
-CajaRegistradora *-- VentaDiaria
-CajaRegistradora o-- Propina
-CajaRegistradora *-- TotalVendido
+CajaRegistradora "1" *-- "1" Ahorro
+CajaRegistradora "1" *-- "1" MetaVentaDiaria
+CajaRegistradora "1" *-- "1" VentaDiaria
+CajaRegistradora "1" o-- "1" Propina
+CajaRegistradora "1" *-- "1" TotalVendido
 
-Cliente o-- Propina
-Basura *-- Perdida
+Cliente "1" o-- "1" Propina
+Basura "1" *-- "0..*" Perdida
 
 @enduml
