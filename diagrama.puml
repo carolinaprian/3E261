@@ -13,13 +13,12 @@ class Mesera
     + Platillo : LlevarPedido(cliente)
     + Platillo : TomarOrden(cliente, platillo)
 }
+class EstadoAnimoCliente
+class EstatusCliente
 
 Cliente --|> Personaje
 Mesera --|> Personaje
 Pareja --|> Cliente
-
-class EstadoAnimoCliente
-class EstatusCliente
 
 Cliente "1" *-- "1" EstadoAnimoCliente
 Cliente "1" *-- "1" EstatusCliente
